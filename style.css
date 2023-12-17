@@ -1,0 +1,52 @@
+* {
+
+margin:0;
+padding: 0;
+font-family: Arial, sans-serif;
+box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(228, 179, 34, 0.8),rgba(248, 129, 9, 0.353)),url(formicon.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.form-box{
+    width:90%;
+    max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgb(243, 138, 9);
+    padding: 50px 60px 70px;
+    text-align: center;
+
+}
+#signin-btn{
+    background-color: #ecedf6; 
+    color: rgb(17, 16, 16); 
+    padding: 5px 5px; 
+    font-size: 10px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+  }
+  
+  
+  #signin-btn:hover {
+    background-color: #d37314; }
+ 
+    
+  #create-new-account-btn{
+   cursor: pointer; }
+
+
+  #create-new-account-btn:hover {
+    background-color: #d37314;}

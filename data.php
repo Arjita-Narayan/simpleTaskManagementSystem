@@ -1,18 +1,31 @@
+
+
+
+
+
+
+
 <?php
 include('db_conn.php');
-echo "<pre>";
-print_r($_POST);
-$name = $_POST['name'];
-$password = $_POST['password'];
-$email = $_POST['email'];
 
-$sql = "INSERT INTO `student` (`password`, `email`, `name`) VALUES ('$password', '$email', '$name')";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $userid = $_POST['userid'];
+    $password = $_POST['password'];
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record added";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    // Hash the password before storing it
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    $sql = "INSERT INTO `userDetail` (`userid`, `password`) VALUES ('$userid', '$hashedPassword')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Login/Signup successful";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
 }
-
-$conn->close();
 ?>
+
+
+
